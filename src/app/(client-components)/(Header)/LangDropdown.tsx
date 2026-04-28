@@ -1,7 +1,7 @@
 import { Popover, Tab, Transition } from "@headlessui/react";
 import {
-  BanknotesIcon,
-  GlobeAltIcon,
+  CurrencyDollarIcon,
+  GlobeEuropeAfricaIcon,
   ChevronDownIcon,
 } from "@heroicons/react/24/outline";
 import { FC, Fragment } from "react";
@@ -90,9 +90,9 @@ const LangDropdown: FC<LangDropdownProps> = ({
                 ${open ? "" : "text-opacity-80"}
              group self-center h-10 sm:h-12 px-3 py-1.5 inline-flex items-center text-sm text-gray-800 dark:text-neutral-200 font-medium hover:text-opacity-100 focus:outline-none `}
             >
-              <GlobeAltIcon className="w-5 h-5 opacity-80" />
+              <GlobeEuropeAfricaIcon className="w-5 h-5 opacity-80" />
               <span className="mx-1">/</span>
-              <BanknotesIcon className="w-5 h-5 opacity-80" />
+              <CurrencyDollarIcon className="w-5 h-5 opacity-80" />
               <ChevronDownIcon
                 className={`${open ? "-rotate-180" : "text-opacity-70"}
                   ml-1 h-4 w-4  group-hover:text-opacity-80 transition ease-in-out duration-150`}
