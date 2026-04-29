@@ -1,3 +1,5 @@
+"use client";
+
 import { Popover, Tab, Transition } from "@headlessui/react";
 import {
   CurrencyDollarIcon,

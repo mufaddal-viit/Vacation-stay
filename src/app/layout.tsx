@@ -7,7 +7,10 @@ import "@/styles/index.scss";
 import "rc-slider/assets/index.css";
 import Footer from "@/components/Footer";
 import FooterNav from "@/components/FooterNav";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+  title: ".Travs",
+};
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",

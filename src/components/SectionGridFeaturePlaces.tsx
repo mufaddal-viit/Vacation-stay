@@ -1,15 +1,13 @@
 import React, { FC, ReactNode } from "react";
 import { DEMO_STAY_LISTINGS } from "@/data/listings";
 import { StayDataType } from "@/data/types";
-import ButtonPrimary from "@/shared/ButtonPrimary";
 import HeaderFilter from "./HeaderFilter";
 import StayCard from "./StayCard";
 import StayCard2 from "./StayCard2";
+import ShowMoreButton from "./ShowMoreButton";
 
-// OTHER DEMO WILL PASS PROPS
 const DEMO_DATA: StayDataType[] = DEMO_STAY_LISTINGS.filter((_, i) => i < 8);
 
-//
 export interface SectionGridFeaturePlacesProps {
   stayListings?: StayDataType[];
   gridClass?: string;
@@ -30,19 +28,7 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
   cardType = "card2",
 }) => {
   const renderCard = (stay: StayDataType) => {
-    let CardName = StayCard;
-    switch (cardType) {
-      case "card1":
-        CardName = StayCard;
-        break;
-      case "card2":
-        CardName = StayCard2;
-        break;
-
-      default:
-        CardName = StayCard;
-    }
-
+    const CardName = cardType === "card2" ? StayCard2 : StayCard;
     return <CardName key={stay.id} data={stay} />;
   };
 
@@ -60,7 +46,7 @@ const SectionGridFeaturePlaces: FC<SectionGridFeaturePlacesProps> = ({
         {stayListings.map((stay) => renderCard(stay))}
       </div>
       <div className="flex mt-16 justify-center items-center">
-        <ButtonPrimary loading>Show me more</ButtonPrimary>
+        <ShowMoreButton />
       </div>
     </div>
   );
